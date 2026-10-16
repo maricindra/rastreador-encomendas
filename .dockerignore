@@ -1,0 +1,46 @@
+# Dependências: o container instala as dele (Linux). Não copiar as da máquina.
+node_modules
+.pnp
+.pnp.js
+
+# Cache do Next: gerado de novo no container (volume app_next no Compose).
+.next
+out
+build
+dist
+
+.git
+.gitignore
+.gitattributes
+.vscode
+.idea
+*.swp
+*.swo
+
+.env
+.env.*
+!.env.example
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+coverage
+.nyc_output
+playwright-report
+test-results
+
+.DS_Store
+Thumbs.db
+
+# Não precisam estar na imagem; o Compose lê estes arquivos no host.
+Dockerfile
+dockerfile
+docker-compose*.yml
+.dockerignore
+
+Exercise.md
+como foi feito.md
+README.md

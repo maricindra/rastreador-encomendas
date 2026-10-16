@@ -1,0 +1,30 @@
+# Uso: docker compose up --build
+# App em http://localhost:3000 com hot reload.
+services:
+  app:
+    container_name: rastreador-encomendas
+    build:
+      context: .
+      dockerfile: dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      # Código da máquina → container (edita local, vê no browser).
+      - .:/app
+      # node_modules Linux da imagem, não os da Windows (se existirem).
+      - app_node_modules:/app/node_modules
+      # Cache do Next isolado: no Windows o bind mount de .next costuma quebrar.
+      - app_next:/app/.next
+    environment:
+      NODE_ENV: development
+      NEXT_TELEMETRY_DISABLED: "1"
+      WATCHPACK_POLLING: "true"
+      CHOKIDAR_USEPOLLING: "true"
+    # Usa o CMD do Dockerfile (next dev em 0.0.0.0).
+    stdin_open: true
+    tty: true
+    init: true
+
+volumes:
+  app_node_modules:
+  app_next:

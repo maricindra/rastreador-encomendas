@@ -28,3 +28,10 @@ Thumbs.db
 # Local code editor settings (like VS Code)
 .vscode/
 .idea/
+
+# Tests
+/coverage
+/playwright-report
+/test-results
+/blob-report
+/playwright/.cache

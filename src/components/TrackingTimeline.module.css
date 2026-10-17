@@ -1,0 +1,48 @@
+.tracking-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tracking-timeline__item {
+  display: grid;
+  grid-template-columns: 14px 1fr;
+  gap: 0.75rem;
+  align-items: start;
+  transform: translateY(8px);
+  animation: tracking-timeline__enter 280ms ease-out forwards;
+}
+
+.tracking-timeline__item--current .tracking-timeline__dot {
+  background: #60a5fa;
+  box-shadow: 0 0 0 4px rgb(37 99 235 / 25%);
+}
+
+.tracking-timeline__dot {
+  width: 14px;
+  height: 14px;
+  margin-top: 0.35rem;
+  border-radius: 50%;
+  background: #64748b;
+}
+
+@keyframes tracking-timeline__enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tracking-timeline__item {
+    animation: none;
+    transform: none;
+  }
+}

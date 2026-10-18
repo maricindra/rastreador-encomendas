@@ -4,7 +4,7 @@ Um rastredor de encomenda com interface intuitiva, pratica e com um design simpl
 
 
 ## Resumo 
-no qual os dados serão armazenados no "TrackingSevice.js", esses dados serão representados na interface intuitiva. Caso a encomenda receba a nomeclatura "Entregue" o Icone "Casa" permanecerá Verde, caso o contrario, permanecerá branco, além disso a encomenda é represetada pelo icone "caixa". É possivel verificar a distância do enderenço de entrega e encomenda por meio do digito do CEP, caso o usuário tenha dificuldade ao permitir permissões avançadas no dispositivo.
+no qual os dados serão armazenados no "TrackingDatajs", esses dados serão representados na interface intuitiva. Caso a encomenda receba a nomeclatura "Entregue" o Icone "Casa" permanecerá Verde, caso o contrario, permanecerá branco, além disso a encomenda é represetada pelo icone "caixa". É possivel verificar a distância do enderenço de entrega e encomenda por meio do digito do CEP, caso o usuário tenha dificuldade ao permitir permissões avançadas no dispositivo.
 
 
 ## ⚙ Ferramentas utilizadas

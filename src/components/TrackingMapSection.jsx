@@ -101,7 +101,16 @@ export default function TrackingMapSection({ packageData }) {
           está a caminho. O CEP posiciona a sua casa, não some com a caixa.
         </Typography>
 
-        <Button variant="contained" onClick={openMap}>
+        <Button
+          variant="contained"
+          onClick={openMap}
+          sx={{
+            color: "#fff",
+            border: "2px solid #fff",
+            bgcolor: "primary.dark",
+            "&:hover": { bgcolor: "primary.dark", border: "2px solid #fff" },
+          }}
+        >
           {active ? "Mapa visível" : "Mostrar encomenda no mapa"}
         </Button>
 
@@ -114,7 +123,21 @@ export default function TrackingMapSection({ packageData }) {
               onChange={(event) => setCep(formatCep(event.target.value))}
               inputProps={{ inputMode: "numeric", "aria-label": "CEP da sua casa" }}
             />
-            <Button type="submit" variant="outlined" disabled={cepStatus === "loading"}>
+            <Button
+              type="submit"
+              variant="outlined"
+              disabled={cepStatus === "loading"}
+              sx={{
+                color: "#fff",
+                border: "2px solid #fff",
+                "&:hover": { border: "2px solid #fff", bgcolor: "rgb(255 255 255 / 8%)" },
+                "&.Mui-disabled": {
+                  color: "#fff",
+                  border: "2px solid #fff",
+                  opacity: 1,
+                },
+              }}
+            >
               {cepStatus === "loading" ? "Buscando CEP…" : "Posicionar minha casa pelo CEP"}
             </Button>
           </Stack>
